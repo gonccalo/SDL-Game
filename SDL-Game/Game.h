@@ -3,6 +3,8 @@
 #define __Game__
 #include "SDL.h"
 #include "TextureManager.h"
+#include "GameObject.h"
+#include "Player.h"
 
 typedef TextureManager TheTextureManager;
 class Game
@@ -22,6 +24,7 @@ private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
 
-	int m_currentFrame;
+	GameObject m_go;
+	Player m_player;
 };
 #endif
