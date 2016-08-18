@@ -9,6 +9,7 @@
 #include "Player.h"
 #include "Enemy.h"
 
+
 class Game{
 public:
 	static Game* Instance() {
@@ -24,6 +25,7 @@ public:
 	void update();
 	void handleEvents();
 	void clean();
+	void quit();
 	bool running() { return m_bRunning; }
 
 private:
