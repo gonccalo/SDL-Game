@@ -12,4 +12,5 @@ public:
 
 private:
 	void handleInput();
+	bool m_flip;
 };
