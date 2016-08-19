@@ -20,24 +20,30 @@ void Player::update() {
 
 	m_velocity.setX(0);
 	m_velocity.setY(0);
-	m_acceleration.setY(0);
+	if (m_position.getY() > 400) {
+		m_acceleration.setY(0);
+	}
+	else
+	{
+		m_acceleration.setY(0.1);
+	}
+	
 	handleInput();
 
 	SDLGameObject::update();
 }
 
 void Player::handleInput() {
-	Vector2D* vec = TheInputHandler::Instance()->getMousePosition();
-	if (vec->getX() >= m_position.getX()) {
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT)) {
+		m_velocity.setX(0.1);
 		m_flip = false;
 	}
-	else {
+	if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT)){
+		m_velocity.setX(-0.1);
 		m_flip = true;
 	}
-	m_velocity = (*vec - m_position) / 1000;
-	
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP)) {
-		m_acceleration.setY(-1);
+		m_acceleration.setY(-0.1);
 	}
 }
 void Player::clean()

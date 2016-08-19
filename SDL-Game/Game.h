@@ -8,6 +8,7 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "MousePointer.h"
 
 
 class Game{

@@ -44,9 +44,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	if (!TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", m_pRenderer)) {
 		return false;
 	}
-
+	m_gameObjects.push_back(new MousePointer(new LoaderParams(0, 0, 128, 82, "animate")));
 	m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate")));
-	m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate")));
+	//m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate")));
 	
 	std::cout << "init got succ\n";
 	m_bRunning = true;
