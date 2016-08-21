@@ -27,3 +27,15 @@ void GameStateMachine::changeState(GameState* pState) {
 	m_gameStates.push_back(pState);
 	m_gameStates.back()->onEnter();
 }
+
+void GameStateMachine::update() {
+	if (!m_gameStates.empty()) {
+		m_gameStates.back()->update();
+	}
+}
+
+void GameStateMachine::render() {
+	if (!m_gameStates.empty()) {
+		m_gameStates.back()->render();
+	}
+}

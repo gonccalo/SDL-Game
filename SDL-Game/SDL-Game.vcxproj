@@ -142,6 +142,7 @@
     <ClCompile Include="GameStateMachine.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuButton.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="MousePointer.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="GameStateMachine.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="LoaderParams.h" />
+    <ClInclude Include="MenuButton.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="MousePointer.h" />
     <ClInclude Include="Player.h" />
@@ -167,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\animate-alpha.png" />
+    <Image Include="assets\button.png" />
     <Image Include="assets\char9.bmp" />
     <Image Include="assets\char9.png" />
     <Image Include="assets\rider.bmp" />
