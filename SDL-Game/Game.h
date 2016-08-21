@@ -9,6 +9,9 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "MousePointer.h"
+#include "GameStateMachine.h"
+#include "MenuState.h"
+#include "PlayState.h"
 
 
 class Game{
@@ -37,6 +40,7 @@ private:
 	SDL_Renderer* m_pRenderer;
 
 	std::vector<GameObject*> m_gameObjects;
+	GameStateMachine* m_pGameStateMachine;
 };
 
 typedef Game TheGame;
