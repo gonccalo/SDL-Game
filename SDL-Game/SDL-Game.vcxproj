@@ -172,6 +172,7 @@
     <Image Include="assets\button.png" />
     <Image Include="assets\char9.bmp" />
     <Image Include="assets\char9.png" />
+    <Image Include="assets\helicopter.png" />
     <Image Include="assets\rider.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
