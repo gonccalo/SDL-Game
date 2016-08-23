@@ -33,6 +33,7 @@ bool MenuState::onExit() {
 	}
 	m_gameObjects.clear();
 	TheTextureManager::Instance()->clearFromTextureMap("playbutton");
+	m_gameObjects.~vector();
 	std::cout << "a sair do menu";
 	return true;
 }
