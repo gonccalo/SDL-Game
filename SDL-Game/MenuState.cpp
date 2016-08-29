@@ -18,10 +18,10 @@ void MenuState::render() {
 }
 
 bool MenuState::onEnter() {
-	if (!TheTextureManager::Instance()->load("assets/button.png", "playbutton", TheGame::Instance()->getRenderer())) {
+	if (!TheTextureManager::Instance()->load("assets/play.png", "playbutton", TheGame::Instance()->getRenderer())) {
 		return false;
 	}
-	GameObject* button1 = new MenuButton(new LoaderParams(100, 100, 150, 48, "playbutton"), s_menuToPlay);
+	GameObject* button1 = new MenuButton(new LoaderParams(100, 100, 400, 100, "playbutton"), s_menuToPlay);
 	m_gameObjects.push_back(button1);
 	std::cout << "a entrar no menu";
 	return true;
