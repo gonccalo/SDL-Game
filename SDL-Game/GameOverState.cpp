@@ -28,9 +28,15 @@ bool GameOverState::onEnter() {
 		return false;
 	}
 
-	GameObject* gameOverText = new AnimatedGraphic(new LoaderParams(200, 100, 19, 97, "gameovertext"), 2);
-	GameObject* button1 = new MenuButton(new LoaderParams(200, 200, 400, 100, "mainbutton"), s_gameOverToMain);
-	GameObject* button2 = new MenuButton(new LoaderParams(200, 300, 400, 100, "restartbutton"), s_restartPlay);
+	GameObject* gameOverText = new AnimatedGraphic(new LoaderParams(200, 100, 97, 19, "gameovertext"), 2);
+
+	GameObject* button1 = new MenuButton();
+	button1->load(new LoaderParams(200, 200, 400, 100, "mainbutton"));
+	dynamic_cast<MenuButton*>(button1)->setCallback(s_gameOverToMain);
+
+	GameObject* button2 = new MenuButton();
+	button2->load(new LoaderParams(200, 300, 400, 100, "restartbutton"));
+	dynamic_cast<MenuButton*>(button2)->setCallback(s_restartPlay);
 
 	m_gameObjects.push_back(gameOverText);
 	m_gameObjects.push_back(button1);
@@ -53,7 +59,7 @@ bool GameOverState::onExit() {
 }
 
 void GameOverState::s_gameOverToMain() {
-	TheGame::Instance()->getStateMachine()->changeState(new MenuState());
+	TheGame::Instance()->getStateMachine()->changeState(new MainMenuState());
 }
 
 void GameOverState::s_restartPlay() {

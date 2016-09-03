@@ -57,8 +57,13 @@ bool PlayState::onEnter() {
 		return false;
 	}
 	//m_gameObjects.push_back(new MousePointer(new LoaderParams(0, 0, 90, 90, "heli")));
-	m_gameObjects.push_back(new Player(new LoaderParams(500, 100, 128, 82, "animate")));
-	m_gameObjects.push_back(new Enemy(new LoaderParams(100, 100, 90, 90, "heli")));
+	Player* pPlayer = new Player();
+	pPlayer->load(new LoaderParams(500, 100, 128, 82, "animate"));
+	m_gameObjects.push_back(pPlayer);
+
+	Enemy* pEnemy = new Enemy();
+	pEnemy->load(new LoaderParams(100, 100, 90, 90, "heli"));
+	m_gameObjects.push_back(pEnemy);
 	std::cout << "a entrar no jogo";
 	return true;
 }

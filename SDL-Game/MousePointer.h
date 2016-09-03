@@ -4,7 +4,8 @@
 class MousePointer : public SDLGameObject
 {
 public:
-	MousePointer(const LoaderParams* pParams);
+	MousePointer();
+	virtual void load(const LoaderParams* pParams);
 	virtual void draw();
 	virtual void update();
 	virtual void clean();

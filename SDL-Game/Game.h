@@ -10,9 +10,8 @@
 #include "Enemy.h"
 #include "MousePointer.h"
 #include "GameStateMachine.h"
-#include "MenuState.h"
+#include "MainMenuState.h"
 #include "PlayState.h"
-
 
 class Game{
 public:

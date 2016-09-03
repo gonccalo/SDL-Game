@@ -1,5 +1,6 @@
 #include"Game.h"
 #include "InputHandler.h"
+#include "MenuButton.h"
 Game* Game::s_pInstance = 0;
 
 Game::Game() {
@@ -40,9 +41,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		std::cout << "SDL init fail\n";
 		return false;
 	}
-
+	TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 	m_pGameStateMachine = new GameStateMachine();
-	m_pGameStateMachine->changeState(new MenuState());
+	m_pGameStateMachine->changeState(new MainMenuState());
 
 	std::cout << "init got succ\n";
 	m_bRunning = true;

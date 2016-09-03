@@ -1,8 +1,12 @@
 #include "MousePointer.h"
 
-MousePointer::MousePointer(const LoaderParams* pParams) :
-	SDLGameObject(pParams) {
+MousePointer::MousePointer() :
+	SDLGameObject() {
 
+}
+
+void MousePointer::load(const LoaderParams* pParams) {
+	SDLGameObject::load(pParams);
 }
 
 void MousePointer::draw() {
