@@ -12,7 +12,17 @@
   </MENU>
   
   <PLAY>
+    <TEXTURES>
+      <texture filename="assets/animate-alpha.png" ID="animate"/>
+      <texture filename="assets/helicopter.png" ID="heli"/>
+    </TEXTURES>
     
+    <OBJECTS>
+      <object type="Player" x="500" y="100" width="128"
+              height="82" textureID="animate" numFrames="6"/>
+      <object type="Enemy" x="100" y="100" width="90"
+              height="90" textureID="heli" numFrames="2"/>
+    </OBJECTS>
   </PLAY>
   
   <GAMEOVER>

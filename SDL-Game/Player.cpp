@@ -3,6 +3,7 @@
 
 Player::Player() :
 	SDLGameObject(){
+
 }
 
 void Player::load(const LoaderParams* pParams) {

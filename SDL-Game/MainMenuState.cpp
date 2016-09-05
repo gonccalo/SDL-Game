@@ -47,7 +47,7 @@ bool MainMenuState::onExit() {
 	for (int i = 0; i < m_textureIDs.size(); i++) {
 		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDs[i]);
 	}
-	m_gameObjects.~vector();
+	//m_gameObjects.~vector();
 	std::cout << "a sair do menu";
 	return true;
 }

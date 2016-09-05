@@ -1,5 +1,6 @@
 #pragma once
 #include "SDLGameObject.h"
+#include "GameObjectFactory.h"
 
 class Enemy : public SDLGameObject
 {
@@ -13,4 +14,11 @@ public:
 
 private:
 
+};
+class EnemyCreator : public BaseCreator {
+public:
+	virtual GameObject* createGameObject() const {
+		return new Enemy();
+	}
+	~EnemyCreator() {}
 };

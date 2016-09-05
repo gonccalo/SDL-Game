@@ -4,6 +4,8 @@
 const std::string PauseState::s_pauseID = "PAUSE";
 
 void PauseState::s_pauseToMain() {
+	TheGame::Instance()->getStateMachine()->popState();//Tirar o estado pausa
+	//tirar o estado play
 	TheGame::Instance()->getStateMachine()->changeState(new MainMenuState());
 }
 

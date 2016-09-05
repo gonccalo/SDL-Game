@@ -53,7 +53,7 @@ bool GameOverState::onExit() {
 	TheTextureManager::Instance()->clearFromTextureMap("mainbutton");
 	TheTextureManager::Instance()->clearFromTextureMap("restartbutton");
 
-	m_gameObjects.~vector();
+	//m_gameObjects.~vector();
 	std::cout << "a sair do menu";
 	return true;
 }

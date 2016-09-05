@@ -19,6 +19,9 @@
     <Filter Include="Source Files\GameStates">
       <UniqueIdentifier>{f21f50c1-9ecd-4e54-91e9-75c0e891588f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\tinyXml">
+      <UniqueIdentifier>{c8bfda40-ebb4-4f6a-bb28-20f4030a9848}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -66,29 +69,26 @@
     <ClCompile Include="StateParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tinyXml\tinystr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tinyXml\tinyxml.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tinyXml\tinyxmlerror.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tinyXml\tinyxmlparser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameObjectFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MainMenuState.cpp">
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
+    <ClCompile Include="tinyXml\tinyxmlparser.cpp">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyXml\tinyxmlerror.cpp">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyXml\tinyxml.cpp">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyXml\tinystr.cpp">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="TextureManager.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -143,17 +143,20 @@
     <ClInclude Include="StateParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tinyXml\tinystr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tinyXml\tinyxml.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MainMenuState.h">
       <Filter>Source Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="MenuState.h">
       <Filter>Source Files\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyXml\tinyxml.h">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyXml\tinystr.h">
+      <Filter>Source Files\tinyXml</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

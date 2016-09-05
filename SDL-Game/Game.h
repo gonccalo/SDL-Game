@@ -8,7 +8,6 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "Enemy.h"
-#include "MousePointer.h"
 #include "GameStateMachine.h"
 #include "MainMenuState.h"
 #include "PlayState.h"

@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "PauseState.h"
 #include "GameOverState.h"
+#include "StateParser.h"
 
 const std::string PlayState::s_playID = "PLAY";
 
@@ -16,7 +17,7 @@ void PlayState::update() {
 	if (checkCollision(
 		dynamic_cast<SDLGameObject*>(m_gameObjects[0]),
 		dynamic_cast<SDLGameObject*>(m_gameObjects[1]))) {
-		TheGame::Instance()->getStateMachine()->pushState(new GameOverState());
+		TheGame::Instance()->getStateMachine()->changeState(new GameOverState());
 	}
 }
 
@@ -50,13 +51,18 @@ bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2) {
 }
 
 bool PlayState::onEnter() {
+	StateParser stateParser;
+	stateParser.parseState("data.xml", s_playID, &m_gameObjects, &m_textureIDs);
+	std::cout << "a entrar no jogo";
+	return true;
+
+	/*
 	if (!TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", TheGame::Instance()->getRenderer())) {
 		return false;
 	}
 	if (!TheTextureManager::Instance()->load("assets/helicopter.png", "heli", TheGame::Instance()->getRenderer())) {
 		return false;
 	}
-	//m_gameObjects.push_back(new MousePointer(new LoaderParams(0, 0, 90, 90, "heli")));
 	Player* pPlayer = new Player();
 	pPlayer->load(new LoaderParams(500, 100, 128, 82, "animate"));
 	m_gameObjects.push_back(pPlayer);
@@ -66,6 +72,7 @@ bool PlayState::onEnter() {
 	m_gameObjects.push_back(pEnemy);
 	std::cout << "a entrar no jogo";
 	return true;
+	*/
 }
 
 bool PlayState::onExit() {
@@ -73,8 +80,9 @@ bool PlayState::onExit() {
 		m_gameObjects[i]->clean();
 	}
 	m_gameObjects.clear();
-	TheTextureManager::Instance()->clearFromTextureMap("animate");
-	TheTextureManager::Instance()->clearFromTextureMap("heli");
+	for (int i = 0; i < m_textureIDs.size(); i++) {
+		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDs[i]);
+	}
 	std::cout << "a sair do jogo";
 	return true;
 }
