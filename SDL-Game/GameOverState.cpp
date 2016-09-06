@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "AnimatedGraphic.h"
 #include "MenuButton.h"
+#include "StateParser.h"
 
 const std::string GameOverState::s_gameOverID = "GAMEOVER";
 
@@ -18,6 +19,16 @@ void GameOverState::render() {
 }
 
 bool GameOverState::onEnter() {
+	StateParser stateParser;
+	stateParser.parseState("data.xml", s_gameOverID, &m_gameObjects, &m_textureIDs);
+
+	m_callbacks.push_back(0);
+	m_callbacks.push_back(s_gameOverToMain);
+	m_callbacks.push_back(s_restartPlay);
+	setCallbacks(m_callbacks);
+
+	return true;
+	/*
 	if (!TheTextureManager::Instance()->load("assets/over.png", "gameovertext", TheGame::Instance()->getRenderer())) {
 		return false;
 	}
@@ -42,6 +53,7 @@ bool GameOverState::onEnter() {
 	m_gameObjects.push_back(button1);
 	m_gameObjects.push_back(button2);
 	return true;
+	*/
 }
 
 bool GameOverState::onExit() {
@@ -49,13 +61,21 @@ bool GameOverState::onExit() {
 		m_gameObjects[i]->clean();
 	}
 	m_gameObjects.clear();
-	TheTextureManager::Instance()->clearFromTextureMap("gameovertext");
-	TheTextureManager::Instance()->clearFromTextureMap("mainbutton");
-	TheTextureManager::Instance()->clearFromTextureMap("restartbutton");
-
+	for (int i = 0; i < m_textureIDs.size(); i++) {
+		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDs[i]);
+	}
 	//m_gameObjects.~vector();
 	std::cout << "a sair do menu";
 	return true;
+}
+
+void GameOverState::setCallbacks(const std::vector<Callback> &callbacks) {
+	for (int i = 0; i < m_gameObjects.size(); i++) {
+		if (dynamic_cast<MenuButton*>(m_gameObjects[i])) {
+			MenuButton* pButton = dynamic_cast<MenuButton*>(m_gameObjects[i]);
+			pButton->setCallback(callbacks[pButton->getCallbackID()]);
+		}
+	}
 }
 
 void GameOverState::s_gameOverToMain() {

@@ -24,8 +24,37 @@
               height="90" textureID="heli" numFrames="2"/>
     </OBJECTS>
   </PLAY>
+
+  <PAUSE>
+    <TEXTURES>
+      <texture filename="assets/button.png" ID="main"/>
+    </TEXTURES>
+    <OBJECTS>
+      <object type="MenuButton" x="200" y="100" width="150"
+            height="48" textureID="main" numFrames="0"
+            callbackID="1"/>
+    <object type="MenuButton" x="200" y="300" width="150"
+            height="48" textureID="main" numFrames="0"
+            callbackID="2"/>
+    </OBJECTS>
+  </PAUSE>
   
   <GAMEOVER>
-    
+    <TEXTURES>
+      <texture filename="assets/over.png" ID="gameovertext"/>
+      <texture filename="assets/exit.png" ID="mainbutton"/>
+      <texture filename="assets/play.png" ID="restartbutton"/>
+    </TEXTURES>
+    <OBJECTS>
+      <object type="AnimatedGraphic" x="200" y="100" width="97"
+            height="19" textureID="gameovertext" numFrames="0"
+            animSpeed="2"/>
+    <object type="MenuButton" x="200" y="200" width="400"
+            height="100" textureID="mainbutton" numFrames="0"
+            callbackID="1"/>
+    <object type="MenuButton" x="200" y="300" width="400"
+            height="100" textureID="restartbutton" numFrames="0"
+            callbackID="2"/>
+    </OBJECTS>
   </GAMEOVER>
 </STATES>

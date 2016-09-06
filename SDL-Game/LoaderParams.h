@@ -19,6 +19,7 @@ public:
 	int getY() const { return m_y; }
 	int getWidth() const { return m_width; }
 	int getHeight() const { return m_height; }
+	int getAnimSpeed() const { return m_animSpeed; }
 	std::string getTextureID() const { return m_textureID; }
 	int getCallbackID() const { return m_callBackID; }
 
