@@ -30,6 +30,8 @@ public:
 	void quit();
 	bool running() { return m_bRunning; }
 	GameStateMachine* getStateMachine() { return m_pGameStateMachine; }
+	int getGameWidth() const { return m_width; }
+	int getGameHeight() const { return m_height; }
 
 private:
 	Game();
@@ -37,7 +39,8 @@ private:
 	bool m_bRunning;
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
-
+	int m_width;
+	int m_height;
 	std::vector<GameObject*> m_gameObjects;
 	GameStateMachine* m_pGameStateMachine;
 };

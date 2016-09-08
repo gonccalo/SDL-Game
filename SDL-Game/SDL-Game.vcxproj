@@ -103,7 +103,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;zdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,12 +138,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedGraphic.cpp" />
+    <ClCompile Include="base64\base64.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObjectFactory.cpp" />
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="GameStateMachine.cpp" />
     <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelParser.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuButton.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
@@ -154,6 +157,7 @@
     <ClCompile Include="SDLGameObject.cpp" />
     <ClCompile Include="StateParser.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TileLayer.cpp" />
     <ClCompile Include="tinyXml\tinystr.cpp" />
     <ClCompile Include="tinyXml\tinyxml.cpp" />
     <ClCompile Include="tinyXml\tinyxmlerror.cpp" />
@@ -161,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedGraphic.h" />
+    <ClInclude Include="base64\base64.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
@@ -169,6 +174,9 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameStateMachine.h" />
     <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="LevelParser.h" />
     <ClInclude Include="LoaderParams.h" />
     <ClInclude Include="MenuButton.h" />
     <ClInclude Include="MainMenuState.h" />
@@ -180,6 +188,7 @@
     <ClInclude Include="SDLGameObject.h" />
     <ClInclude Include="StateParser.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TileLayer.h" />
     <ClInclude Include="tinyXml\tinystr.h" />
     <ClInclude Include="tinyXml\tinyxml.h" />
     <ClInclude Include="Vector2D.h" />

@@ -13,14 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\MenuObjects">
-      <UniqueIdentifier>{139ae303-e522-4479-9ead-b422e59c9871}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\GameStates">
       <UniqueIdentifier>{f21f50c1-9ecd-4e54-91e9-75c0e891588f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\tinyXml">
       <UniqueIdentifier>{c8bfda40-ebb4-4f6a-bb28-20f4030a9848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{139ae303-e522-4479-9ead-b422e59c9871}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base64">
+      <UniqueIdentifier>{774c47bc-4e94-4176-a987-de3a818440e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -33,23 +36,11 @@
     <ClCompile Include="TextureManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SDLGameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="InputHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MousePointer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MenuButton.cpp">
-      <Filter>Source Files\MenuObjects</Filter>
+      <Filter>Source Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="PlayState.cpp">
       <Filter>Source Files\GameStates</Filter>
@@ -59,9 +50,6 @@
     </ClCompile>
     <ClCompile Include="PauseState.cpp">
       <Filter>Source Files\GameStates</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimatedGraphic.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameOverState.cpp">
       <Filter>Source Files\GameStates</Filter>
@@ -87,21 +75,39 @@
     <ClCompile Include="tinyXml\tinystr.cpp">
       <Filter>Source Files\tinyXml</Filter>
     </ClCompile>
+    <ClCompile Include="AnimatedGraphic.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="MousePointer.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="SDLGameObject.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base64\base64.cpp">
+      <Filter>Source Files\base64</Filter>
+    </ClCompile>
+    <ClCompile Include="TileLayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextureManager.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LoaderParams.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDLGameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vector2D.h">
@@ -110,11 +116,8 @@
     <ClInclude Include="InputHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MousePointer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MenuButton.h">
-      <Filter>Source Files\MenuObjects</Filter>
+      <Filter>Source Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
       <Filter>Source Files\GameStates</Filter>
@@ -125,9 +128,6 @@
     <ClInclude Include="PauseState.h">
       <Filter>Source Files\GameStates</Filter>
     </ClInclude>
-    <ClInclude Include="AnimatedGraphic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameOverState.h">
       <Filter>Source Files\GameStates</Filter>
     </ClInclude>
@@ -135,9 +135,6 @@
       <Filter>Source Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="GameObjectFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StateParser.h">
@@ -157,6 +154,39 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDLGameObject.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="MousePointer.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedGraphic.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TileLayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base64\base64.h">
+      <Filter>Source Files\base64</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
