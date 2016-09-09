@@ -1,8 +1,10 @@
 #include "LevelParser.h"
 #include "base64\base64.h"
-#include <zconf.h>
-#include <zlib.h>
 #include "TileLayer.h"
+
+#include "zconf.h" 
+#include "zlib.h"
+
 
 Level* LevelParser::parseLevel(const char* levelFile) {
 	TiXmlDocument levelDocument;
@@ -30,8 +32,9 @@ Level* LevelParser::parseLevel(const char* levelFile) {
 }
 
 void LevelParser::parseTilesets(TiXmlElement* pTilesetRoot, std::vector<Tileset>* pTilesets) {
+	std::string filename = std::string(pTilesetRoot->FirstChildElement()->Attribute("source"));
 	TheTextureManager::Instance()->load(
-		pTilesetRoot->FirstChildElement()->Attribute("source"),
+		filename,
 		pTilesetRoot->Attribute("name"),
 		TheGame::Instance()->getRenderer());
 
@@ -55,7 +58,7 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 
 	std::vector<std::vector<int>> data;
 	std::string decodedIDs;
-	TiXmlElement* pDataNode;
+	TiXmlElement* pDataNode = NULL;
 
 	for (TiXmlElement* e = pTileElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement()) {
 		if (e->Value() == std::string("data")) {
@@ -67,10 +70,11 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 		std::string t = text->Value();
 		decodedIDs = base64_decode(t);
 	}
-
 	uLongf numGids = m_width * m_height * sizeof(int);
 	std::vector<unsigned> gids(numGids);
+	
 	uncompress((Bytef*)&gids[0], &numGids, (const Bytef*)decodedIDs.c_str(), decodedIDs.size());
+	
 	
 	std::vector<int> layerRow(m_width);
 
