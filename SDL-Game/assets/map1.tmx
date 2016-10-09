@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="15" tilewidth="32" tileheight="32" nextobjectid="4">
+ <properties>
+  <property name="heli" value="assets/helicopter.png"/>
+ </properties>
  <tileset firstgid="1" name="blocks1" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
-  <image source="assets/blocks1.png" width="640" height="400"/>
+  <image source="blocks1.png" width="640" height="400"/>
  </tileset>
- <layer name="Camada de Tiles 1" width="20" height="15">
+ <layer name="Camada de Tiles 1" width="60" height="15">
   <data encoding="base64" compression="zlib">
-   eJxjYBgYkAzEKUCcSqK+OCCOB+IEajtokNs9CoYv2AbE26F4BxDvpNC8PUC8C4j3Qem9VDBvPxDvhmJqmLcLivdjMW85EK8A4tVAvAaIVwLxOqgcAFNpFf4=
+   eJzl1stKw0AUxvG8gEJdaVtdCPoEXddFrfoU3gu+RGmh9gm8bsSF9Ybizlu99NX6HzyBacjFSU4g6IEfSdqZyXxJmMTz/m7tYR+tHPtmOYd2XfyizSa2sJ3vVCZqB7sJbZaw7DDmJdqy1SrNa3OV8P8MSg7j1byfvLXUM8pecdfnRvlcRcgbV/8lr/8cFzXvLOZQxnzGsTrooodD9DOOZ1dR7+9AttcOfY5xhBOcRrQpal7/OXbJa2oQ8fu5Jew4j2qgiTWsYxUbEW018trvMpPrwJvMax+H1QtexRveHecyjTpWhNmfimirkdfum+b+fmKIb9l+Oc4lOIe4LNp505TJO8KH0M7rr/EVVLEg+y7rvXbeoTC5g3lvcYcHPOIeT4E2cXnNt+FiiKTvRfv77FmYddqs0WcJff0aA3XWTcg=
   </data>
  </layer>
+ <objectgroup name="r">
+  <object id="1" name="Helicopter1" type="Enemy" x="239" y="291" width="1" height="1">
+   <properties>
+    <property name="animSpeed" type="int" value="0"/>
+    <property name="callbackID" type="int" value="0"/>
+    <property name="numFrames" type="int" value="2"/>
+    <property name="textureHeight" type="int" value="90"/>
+    <property name="textureID" value="heli"/>
+    <property name="textureWidth" type="int" value="90"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

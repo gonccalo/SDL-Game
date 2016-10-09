@@ -12,6 +12,8 @@ void PlayState::update() {
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE)) {
 		TheGame::Instance()->getStateMachine()->pushState(new PauseState());
 	}
+	
+	pLevel->update();
 	/*
 	for (int i = 0; i < m_gameObjects.size(); i++) {
 		m_gameObjects[i]->update();
@@ -32,6 +34,7 @@ void PlayState::render() {
 	}
 	*/
 	pLevel->render();
+	
 }
 
 bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2) {
@@ -58,10 +61,13 @@ bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2) {
 }
 
 bool PlayState::onEnter() {
-	//StateParser stateParser;
-	//stateParser.parseState("data.xml", s_playID, &m_gameObjects, &m_textureIDs);
+	/*
+	StateParser stateParser;
+	stateParser.parseState("data.xml", s_playID, &m_gameObjects, &m_textureIDs);
+	*/
 	LevelParser levelParser;
 	pLevel = levelParser.parseLevel("assets/map1.tmx");
+	
 	std::cout << "a entrar no jogo";
 	return true;
 }
